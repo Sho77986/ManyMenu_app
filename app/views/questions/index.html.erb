@@ -1,0 +1,53 @@
+
+
+<h2 class="items-sell-title">問い合わせ内容を入力</h2>
+    <%=form_with  url: questions_path, method: :post,  local: true do |f| %>  
+
+
+
+    <%# 商品名と商品説明 %>
+    <div class="new-items">
+      <div class="weight-bold-text">
+        email
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :q_email, class:"items-text", placeholder:"abc@com", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        電話番号
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :q_call_number, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        問い合わせの理由
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :q_reason, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        問い合わせ内容
+        <span class="indispensable">必須</span>
+      </div>
+        <%= f.text_area :q_text, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+      <div class="sell-btn-contents">
+      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%end%>
