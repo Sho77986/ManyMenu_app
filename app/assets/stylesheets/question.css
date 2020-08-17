@@ -1,0 +1,25 @@
+.name_form {
+  margin-bottom: 10px;
+}
+
+.message_form {
+  height: 150px;
+  margin-bottom: 30px;
+}
+
+.name_form,
+.message_form {
+  width: 500px;
+  padding: 15px;
+  border: 1px solid white;
+  display: block;
+}
+
+.send {
+  width: 200px;
+  padding: 15px;
+  border: 1px solid white;
+  color: white;
+  background-color: orange;
+  display: block;
+}
