@@ -1,0 +1,27 @@
+<header class="header"> 
+  <h1 class="apple"><a href="/">ManyMenu</a></h1>
+ </header>
+  
+　<!--#検索機能-->
+<%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+
+
+
+<ul class='lists-right'>
+      <%# if user_signed_in? %>
+        <li><%= link_to "shopname""様", "yours", class: "user-shopname" %> </li> 
+        <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %> </li> 
+      <%# else %>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <%# end %>
+       
+ </ul>
+
+<ul>
+  <li><%= link_to '問い合わせ',  questions_path, class: "question" %></li>
+</ul>
+ 
