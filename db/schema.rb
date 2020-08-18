@@ -10,28 +10,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_221420) do
+ActiveRecord::Schema.define(version: 2020_08_17_235558) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "category_id", null: false
-    t.string "image", null: false
-    t.string "name", null: false
-    t.string "price", null: false
-    t.string "calorie", null: false
-    t.string "allergies", null: false
-    t.string "comment"
+    t.string "image", limit: 255, null: false
+    t.string "name", limit: 255, null: false
+    t.string "price", limit: 255, null: false
+    t.string "calorie", limit: 255, null: false
+    t.string "allergies", limit: 255, null: false
+    t.string "comment", limit: 255
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "q_email", null: false
-    t.string "q_call_number", null: false
-    t.string "q_reason", null: false
-    t.string "q_text", null: false
+    t.string "q_email", limit: 255, null: false
+    t.string "q_call_number", limit: 255, null: false
+    t.string "q_reason", limit: 255, null: false
+    t.string "q_text", limit: 255, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "name", null: false
+    t.string "shop", null: false
+    t.string "call_number", null: false
+    t.string "prefecture", null: false
+    t.string "city", null: false
+    t.string "address", null: false
+    t.string "postal_code", null: false
+    t.string "image", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end
