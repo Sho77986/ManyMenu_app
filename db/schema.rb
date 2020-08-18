@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_17_235558) do
+ActiveRecord::Schema.define(version: 2020_08_18_090841) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -21,6 +21,32 @@ ActiveRecord::Schema.define(version: 2020_08_17_235558) do
     t.string "calorie", limit: 255, null: false
     t.string "allergies", limit: 255, null: false
     t.string "comment", limit: 255
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "publish_requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "image_a"
+    t.string "image_b"
+    t.string "image_c"
+    t.string "image_d"
+    t.string "image_e"
+    t.string "image_f"
+    t.string "image_g"
+    t.string "image_h"
+    t.string "image_i"
+    t.string "image_j"
+    t.string "publish_text"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "qr_codes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "number_small"
+    t.string "number_big"
+    t.string "qr_text"
+    t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
