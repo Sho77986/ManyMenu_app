@@ -1,0 +1,85 @@
+
+
+<h2 class="items-sell-title">QRコード依頼</h2>
+    <%=form_with  url:  qr_codes_path, method: :post,  local: true do |f| %>  
+
+
+
+    <%# 商品名と商品説明 %>
+    
+
+     <div class="sell-price">
+      <div class="weight-bold-text question-text">
+        <span>販売枚数<br>小サイズ(1枚10円)     テーブルに貼れるシールです！
+        <br>極大サイズ(1枚100円)     B4サイズの玄関等の掲載にピッタリ！</span>
+        <a class="question" href="#"></a>
+      </div>
+      <div>
+        <div class="price-content">
+          <div class="price-text">
+            <span>小サイズ</span>
+            <span class="indispensable">必須</span>
+          </div>
+          
+          <%= f.text_field :number_small, class:"price-input1", placeholder:"例）300" %>
+          <span class="sell-yen">枚</span>
+        </div>
+
+
+　　　　　<div class="price-content">
+          <div class="price-text">
+            <span>極大サイズ</span>
+            <span class="indispensable">必須</span>
+          </div>
+        
+          <%= f.text_field :number_big, class:"price-input2", placeholder:"例）300" %>
+          <span class="sell-yen">枚</span>
+        </div>
+
+
+        <div class="price-content">
+          <span>税金 (10%)</span>
+          <span>
+            <span id='add-tax-price'></span>円
+          </span>
+        </div>
+        <div class="price-content">
+          <span>送料 一律500円</span>
+        </div>
+        <div class="price-content">
+          <span>お支払い価格</span>
+          <span>
+            <span id='price'></span>円
+        </div>
+        </span>
+      </div>
+    </div>
+　　
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        その他
+        <span class="indispensable"></span>
+      </div>
+        <%= f.text_area :qr_text, class:"items-text", placeholder:"ex: 早めに送付していただけるとありがたいです" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+    <div class="weight-bold-text">
+        ※　お支払い方法は口座入金となっております。
+         <span class="indispensable"></span>
+      <div class="sell-btn-contents">
+       <div class="weight-bold-text">
+        ※　入金はこの問い合わせ送信後、登録されたemailにてお知らせいたします。
+        <span class="indispensable"></span>
+      <div class="sell-btn-contents">
+     <div class="weight-bold-text">
+        ※　入金が確認され次第送付いたします。
+        <span class="indispensable"></span>
+      <div class="sell-btn-contents">
+      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%end%>
