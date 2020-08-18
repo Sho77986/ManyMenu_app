@@ -11,7 +11,7 @@
         email
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :q_email, class:"items-text", placeholder:"abc@com", maxlength:"40" %>
+      <%= f.text_field :q_email, class:"items-text", placeholder:"abc@com", maxlength:"40" %>
     </div> 
 
 
@@ -21,17 +21,17 @@
         電話番号
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :q_call_number, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+      <%= f.text_field :q_call_number, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
     </div> 
 
 
 
     <div class="new-items">
       <div class="weight-bold-text">
-        問い合わせの理由
+        問い合わせ事項
         <span class="indispensable">必須</span>
       </div>
-      <%= f.text_area :q_reason, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+      <%= f.text_field :q_reason, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
     </div> 
 
 
