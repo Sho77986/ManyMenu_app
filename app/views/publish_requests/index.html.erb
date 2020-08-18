@@ -1,0 +1,170 @@
+<h2 class="items-sell-title">掲載ページ制作依頼</h2>
+    <%=form_with  url: publish_requests_path, method: :post,  local: true do |f| %>  
+
+
+
+    <%# 商品名と商品説明 %>
+    <h4>  ※ホームページがある方</h4>
+    <h5>  ※一番下にある問い合わせ欄に、お店のURLをお貼りください。</h5>
+
+
+    <h4>  ※ホームページがない方</h4>
+    <h5>  ※お店のメニュー表を撮ってお送りください。</h5>
+    <h5>  ※写真が10枚を超える際は、一度お問い合わせください。</h5>
+    
+
+
+  　
+　　 <div class="img-upload">
+         <div class="weight-bold-text">
+        メニュー表の写真、1枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_a %>
+         </div>
+      </div>
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        ２枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_b %>
+         </div>
+      </div>
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        3枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_c %>
+         </div>
+      </div>
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        4枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_d %>
+         </div>
+      </div>
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        5枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_e %>
+         </div>
+      </div>
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        6枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_f %>
+         </div>
+      </div>
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        7枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_g %>
+         </div>
+      </div>
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        8枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_h %>
+         </div>
+      </div>
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        9枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_i %>
+         </div>
+      </div>
+      
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        10枚目
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :image_j %>
+         </div>
+      </div>
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        問い合わせ内容
+        <span class="indispensable"></span>
+      </div>
+        <%= f.text_area :publish_text, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+      <div class="sell-btn-contents">
+      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%end%>

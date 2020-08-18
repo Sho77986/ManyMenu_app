@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :menus_status, only: [:index, :show]
   end
   resources :questions,  only: [:index, :create]
+  resources :qr_codes,  only: [:index, :create]
+  resources :publish_requests,  only: [:index, :create]
 end

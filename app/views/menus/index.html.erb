@@ -3,10 +3,7 @@
  </header>
   
 　<!--#検索機能-->
-<%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
+
 
 
 
@@ -21,7 +18,25 @@
        
  </ul>
 
+      <% if user_signed_in? %>
+        <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "publish" %> </li>  
+        <li><%= link_to  '掲載する品を編集、削除する', new_menu_path , class: "publish" %> </li>
+        <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "publish" %> </li>
+
+        <h4>自分で掲載情報を書くのが面倒な方は下記をクリック</h4>
+        <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "publish" %> </li>
+
+
+      <% else %>
+       <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+       <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
+       <%= form.submit "検索", class: "search-btn" %>
+
+       <% end %>
+
+      <% end %>
+
 <ul>
-  <li><%= link_to '問い合わせ',  questions_path, class: "question" %></li>
+  <li><%= link_to 'その他 問い合わせ',  questions_path, class: "question" %></li>
 </ul>
  
