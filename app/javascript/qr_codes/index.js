@@ -16,7 +16,7 @@ window.addEventListener("load", function(){
     let NumberTwo = document.getElementById("number_big").value
   
     let SalesCommission = document.getElementById('add-tax-price')
-     SalesCommission = NumberOne * 10 * 1.1 + NumberTwo * 100 * 1.1;
+     SalesCommission = (NumberOne * 10 * 1.1 + NumberTwo * 100 * 1.1);
     let Profit = document.getElementById('price')
      Profit = SalesCommission + 500
  

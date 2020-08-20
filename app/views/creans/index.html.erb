@@ -1,0 +1,63 @@
+
+
+<div>衛生面の取り組み</div>
+
+
+    <%=form_with  url: creans_path, method: :post,  local: true do |f| %> 
+    
+　　 <div class="crean-items">
+      <div class="weight-bold-text">
+       清潔にするための取り組み。
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :crean_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+    <div class="crean-items">
+      <div class="weight-bold-text">
+       消毒に関して
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :disinfection_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+    <div class="crean-items">
+      <div class="weight-bold-text">
+       その他衛生面での取り組み。
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :other_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+    <div class="crean-items">
+      <div class="weight-bold-text">
+       本日の混雑回避時間。
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :today_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+    <div class="crean-items">
+      <div class="weight-bold-text">
+       明日の混雑回避時間(予想)
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :tomorrow_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+
+    <div class="crean-items">
+      <div class="weight-bold-text">
+       週末の混雑時間(予想)
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_field :weekend_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    </div>
+
+
+
+      <div class="sell-btn-contents">
+      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+
+    <%end%>

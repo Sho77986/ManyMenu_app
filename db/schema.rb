@@ -10,17 +10,82 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_18_090841) do
+ActiveRecord::Schema.define(version: 2020_08_20_032035) do
+
+  create_table "creans", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
+    t.string "crean_action"
+    t.string "disinfection_action"
+    t.string "other_action"
+    t.string "today_empty_time"
+    t.string "tomorrow_empty_time"
+    t.string "weekend_empty_time"
+    t.integer "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.integer "category_id", null: false
-    t.string "image", limit: 255, null: false
-    t.string "name", limit: 255, null: false
-    t.string "price", limit: 255, null: false
-    t.string "calorie", limit: 255, null: false
-    t.string "allergies", limit: 255, null: false
-    t.string "comment", limit: 255
+    t.string "recommend_image_one"
+    t.string "recommend_price_one"
+    t.string "recommend_calorie_one"
+    t.string "recommend_allergies_one"
+    t.string "recommend_charm_one"
+    t.string "recommend_image_two"
+    t.string "recommend_price_two"
+    t.string "recommend_calorie_two"
+    t.string "recommend_allergies_two"
+    t.string "recommend_charm_two"
+    t.string "recommend_image_three"
+    t.string "recommend_price_three"
+    t.string "recommend_calorie_three"
+    t.string "recommend_allergies_three"
+    t.string "recommend_charm_three"
+    t.string "main_image_one"
+    t.string "main_price_one"
+    t.string "main_calorie_one"
+    t.string "main_allergies_one"
+    t.string "main_charm_one"
+    t.string "main_image_two"
+    t.string "main_price_two"
+    t.string "main_calorie_two"
+    t.string "main_allergies_two"
+    t.string "main_charm_two"
+    t.string "main_imege_three"
+    t.string "main_price_three"
+    t.string "main_calorie_three"
+    t.string "main_allergies_three"
+    t.string "main_charm_three"
+    t.string "sub_image_one"
+    t.string "sub_price_one"
+    t.string "sub_calorie_one"
+    t.string "sub_allergies_one"
+    t.string "sub_charm_one"
+    t.string "sub_image_two"
+    t.string "sub_price_two"
+    t.string "sub_calorie_two"
+    t.string "sub_allergies_two"
+    t.string "sub_charm_two"
+    t.string "sub_image_three"
+    t.string "sub_price_three"
+    t.string "sub_calorie_three"
+    t.string "sub_allergies_three"
+    t.string "sub_charm_three"
+    t.string "other_image_one"
+    t.string "other_price_one"
+    t.string "other_calorie_one"
+    t.string "other_allergies_one"
+    t.string "other_charm_one"
+    t.string "other_image_two"
+    t.string "other_price_two"
+    t.string "other_calorie_two"
+    t.string "other_allergies_two"
+    t.string "other_charm_two"
+    t.string "other_image_three"
+    t.string "other_price_three"
+    t.string "other_calorie_three"
+    t.string "other_allergies_three"
+    t.string "other_charm_three"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -52,10 +117,10 @@ ActiveRecord::Schema.define(version: 2020_08_18_090841) do
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.string "q_email", limit: 255, null: false
-    t.string "q_call_number", limit: 255, null: false
-    t.string "q_reason", limit: 255, null: false
-    t.string "q_text", limit: 255, null: false
+    t.string "q_email", null: false
+    t.string "q_call_number", null: false
+    t.string "q_reason", null: false
+    t.string "q_text", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

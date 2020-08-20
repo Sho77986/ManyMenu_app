@@ -1,0 +1,633 @@
+
+    <%=form_with  model: @menu,  url: menu_path, method: :put,  local: true do |f| %>  
+
+
+     <div class="img-upload">
+         <div class="weight-bold-text">
+        おすすめのメニュー１位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :recommend_image_one %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :recommend_price_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :recommend_calorie_one, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :recommend_allergies_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :recommend_charm_one, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        おすすめのメニュー２位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :recommend_image_two %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :recommend_price_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :recommend_calorie_two, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :recommend_allergies_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :recommend_charm_two, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        おすすめのメニュー３位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :recommend_image_three %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :recommend_price_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :recommend_calorie_three, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :recommend_allergies_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :recommend_charm_three, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+
+
+
+
+  <div class="img-upload">
+         <div class="weight-bold-text">
+        メインメニュー１位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :main_image_one %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :main_price_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :main_calorie_one, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :main_allergies_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :main_charm_one, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        メインメニュー２位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :main_image_two %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :main_price_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div>
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :main_calorie_two, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :main_allergies_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :main_charm_two, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        メインメニュー３位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :main_image_three %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :main_price_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :main_calorie_three, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :main_allergies_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :main_charm_three, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+    
+    
+
+
+
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        サブメニュー１位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :sub_image_one %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :sub_price_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :sub_calorie_one, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :sub_allergies_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :sub_charm_one, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        サブメニュー２位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :sub_image_two %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :sub_price_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :sub_calorie_two, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :sub_allergies_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :sub_charm_two, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        サブメニュー３位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :sub_image_three %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :sub_price_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :sub_calorie_three, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :sub_allergies_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :sub_charm_three, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+      <div class="img-upload">
+         <div class="weight-bold-text">
+        ドリンクやその他１位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :other_image_one %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :other_price_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :other_calorie_one, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :other_allergies_one, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :other_charm_one, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        ドリンクやその他２位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :other_image_two %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :other_price_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :other_calorie_two, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :other_allergies_two, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :other_charm_two, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+    <div class="img-upload">
+         <div class="weight-bold-text">
+        ドリンクやその他３位
+           <span class="indispensable"></span>
+         </div>
+         <div class="click-upload">
+           <p>
+             クリックしてファイルをアップロード
+           </p>
+           <%= f.file_field :other_image_three %>
+         </div>
+      </div>
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        価格
+      </div>
+      <%= f.text_field :other_price_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="new-items">
+      <div class="weight-bold-text">
+        カロリー
+      </div>
+      <%= f.text_field :other_calorie_three, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+    </div> 
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        アレルギー
+      </div>
+      <%= f.text_field :other_allergies_three, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+    <div class="items-explain">
+      <div class="weight-bold-text">
+        魅力
+      </div>
+        <%= f.text_area :other_charm_three, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+    </div>
+
+
+
+
+
+<div class="new-items">
+      <div class="weight-bold-text">
+        自社サイトがある場合はURLを記載
+      </div>
+      <%= f.text_field :shop_url, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
+    </div> 
+
+
+
+      <div class="sell-btn-contents">
+      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
+      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    </div>
+    <%end%>

@@ -19,12 +19,24 @@
  </ul>
 
       <% if user_signed_in? %>
-        <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "publish" %> </li>  
-        <li><%= link_to  '掲載する品を編集、削除する', new_menu_path , class: "publish" %> </li>
-        <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "publish" %> </li>
+          <%if Menu.find_by(user_id: current_user ) == nil %>
+           <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "publish" %> </li> 
+          <%else%>
+          <li><%= link_to  '掲載する品を編集、削除する', edit_menu_path(current_user.id) , class: "publish" %> </li>
+          <%end%>
 
-        <h4>自分で掲載情報を書くのが面倒な方は下記をクリック</h4>
-        <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "publish" %> </li>
+          <%if  Crean.find_by(user_id: current_user)  == nil  %>
+          <li><%= link_to  '衛生面、空き時間の表示を追加する', creans_path , class: "publish" %> </li>
+          <%else%>
+          <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "publish" %> </li> 
+          <%end%>
+
+           
+           <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "publish" %> </li>
+          
+
+           <h4>自身で掲載、編集することが面倒な方は下記をクリック</h4>
+           <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "publish" %> </li>
 
 
       <% else %>
