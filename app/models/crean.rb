@@ -1,0 +1,2 @@
+class Crean < ApplicationRecord
+end
