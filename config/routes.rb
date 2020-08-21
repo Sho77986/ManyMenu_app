@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: 'menus#index'
   resources :creans,  only: [:index, :create, :edit, :update]
   resources  :menus  do
+    member do
+      get 'search'
+    end
     resources :menus_status, only: [:index, :show]
   end
   resources :questions,  only: [:index, :create]

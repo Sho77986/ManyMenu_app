@@ -2,14 +2,17 @@ class MenusController < ApplicationController
 
 
   def index
+    @menus=Menu.all.order("created_at DESC")
+    @users=User.all.order("created_at DESC")
   end
 
   def new
+    @menu =Menu.new
   end
 
   def create
     @menu =Menu.new(menu_params)
-    if @menu.save!
+    if @menu.save
       redirect_to root_path
     else
       redirect_to menus_path
@@ -34,13 +37,19 @@ class MenusController < ApplicationController
   end
 
   def show
+    @menu=Menu.find(params[:id])
+  end
+
+  def search
+    
+    @users = User.search(params[:keyword])
   end
 
 
   private
 
   def  menu_params
-    params.require(:menu).permit(:recommend_image_one,   :recommend_price_one,   :recommend_calorie_one,   :recommend_allergies_one,   :recommend_charm_one,
+    params.permit(:recommend_image_one,   :recommend_price_one,   :recommend_calorie_one,   :recommend_allergies_one,   :recommend_charm_one,
             :recommend_image_two,   :recommend_price_two,   :recommend_calorie_two,   :recommend_allergies_two,   :recommend_charm_two,
             :recommend_image_three, :recommend_price_three, :recommend_calorie_three, :recommend_allergies_three, :recommend_charm_three,
 
@@ -54,7 +63,7 @@ class MenusController < ApplicationController
 
             :other_image_one,   :other_price_one,   :other_calorie_one,   :other_allergies_one,   :other_charm_one,
             :other_image_two,   :other_price_two,   :other_calorie_two,   :other_allergies_two,   :other_charm_two,
-            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three,
+            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three
 
             
     ).merge(user_id: current_user.id)
