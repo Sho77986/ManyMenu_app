@@ -22,7 +22,8 @@
           <%if Menu.find_by(user_id: current_user ) == nil %>
            <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "publish" %> </li> 
           <%else%>
-          <li><%= link_to  '掲載する品を編集、削除する', edit_menu_path(current_user.id) , class: "publish" %> </li>
+          <li><%= link_to  '掲載画面を確認する', menu_path(current_user.id) , class: "publish" %> </li>
+          <li><%= link_to  '掲載する品を編集する', edit_menu_path(current_user.id) , class: "publish" %> </li>
           <%end%>
 
           <%if  Crean.find_by(user_id: current_user)  == nil  %>
@@ -31,6 +32,7 @@
           <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "publish" %> </li> 
           <%end%>
 
+　　　　　　　<h4>QRコードの発行依頼は下記をクリック</h4>
            
            <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "publish" %> </li>
           
@@ -43,6 +45,10 @@
        <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
        <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
        <%= form.submit "検索", class: "search-btn" %>
+
+　　　　
+
+          
 
        <% end %>
 
