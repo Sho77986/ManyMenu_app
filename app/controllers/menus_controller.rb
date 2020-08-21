@@ -9,7 +9,7 @@ class MenusController < ApplicationController
 
   def create
     @menu =Menu.new(menu_params)
-    if @menu.save!
+    if @menu.save
       redirect_to root_path
     else
       redirect_to menus_path
@@ -54,7 +54,7 @@ class MenusController < ApplicationController
 
             :other_image_one,   :other_price_one,   :other_calorie_one,   :other_allergies_one,   :other_charm_one,
             :other_image_two,   :other_price_two,   :other_calorie_two,   :other_allergies_two,   :other_charm_two,
-            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three,
+            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three
 
             
     ).merge(user_id: current_user.id)
