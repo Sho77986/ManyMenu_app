@@ -5,6 +5,7 @@ class MenusController < ApplicationController
   end
 
   def new
+    @menu =Menu.new
   end
 
   def create
@@ -34,13 +35,14 @@ class MenusController < ApplicationController
   end
 
   def show
+    @menu=Menu.find(params[:id])
   end
 
 
   private
 
   def  menu_params
-    params.require(:menu).permit(:recommend_image_one,   :recommend_price_one,   :recommend_calorie_one,   :recommend_allergies_one,   :recommend_charm_one,
+    params.permit(:recommend_image_one,   :recommend_price_one,   :recommend_calorie_one,   :recommend_allergies_one,   :recommend_charm_one,
             :recommend_image_two,   :recommend_price_two,   :recommend_calorie_two,   :recommend_allergies_two,   :recommend_charm_two,
             :recommend_image_three, :recommend_price_three, :recommend_calorie_three, :recommend_allergies_three, :recommend_charm_three,
 

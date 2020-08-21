@@ -32,7 +32,7 @@ class CreansController < ApplicationController
   private
 
   def creans_params
-    params.require(:crean).permit(:crean_action, :disinfection_action, :other_action, :today_empty_time, :tomorrow_empty_time, :weekend_empty_time).merge(user_id: current_user.id)
+    params.permit(:crean_action, :disinfection_action, :other_action, :today_empty_time, :tomorrow_empty_time, :weekend_empty_time).merge(user_id: current_user.id)
   end
 
 
