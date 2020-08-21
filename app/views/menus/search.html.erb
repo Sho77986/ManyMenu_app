@@ -1,0 +1,21 @@
+  
+    <%= form_with(url:  search_menu_path(@users.ids), local: true, method: :get, class: "search-form") do |form| %>
+       <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
+       <%= form.submit "検索", class: "search-btn" %>
+    
+      <div >"検索結果はこちら"
+       <% @users.each do |user| %>
+        <div>
+        <%= user.shop%>
+        <%= link_to  "ここをクリック",menu_path(user.id) %>
+        <%end %>
+        </div>
+      </div>
+
+
+    <%end%>
+
+
+  <%=link_to 'もどる', root_path, class:"back-btn" %>
+
+

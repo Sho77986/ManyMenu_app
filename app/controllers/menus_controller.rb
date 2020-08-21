@@ -2,6 +2,8 @@ class MenusController < ApplicationController
 
 
   def index
+    @menus=Menu.all.order("created_at DESC")
+    @users=User.all.order("created_at DESC")
   end
 
   def new
@@ -36,6 +38,11 @@ class MenusController < ApplicationController
 
   def show
     @menu=Menu.find(params[:id])
+  end
+
+  def search
+    
+    @users = User.search(params[:keyword])
   end
 
 

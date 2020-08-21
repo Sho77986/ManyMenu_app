@@ -42,14 +42,27 @@
 
 
       <% else %>
-       <%= form_with(url: "#", local: true, method: :get, class: "search-form") do |form| %>
+            
+       <%= form_with(url:  search_menu_path(@users.ids), local: true, method: :get, class: "search-form") do |form| %>
        <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
        <%= form.submit "検索", class: "search-btn" %>
-
+             
+       
+       <div >"最新のおすすめはこちら"
+       <% @users.each do |user|  %>
+       <%= user.shop%>  
+       <% end %>
+       </div>
+       <div>
+       <% @menus.each do |menu| %>
+         <%= menu.recommend_image_one%>
+         <%= menu.recommend_price_one%>
+         <li><%= link_to  "ここをクリック",menu_path(menu.user_id) , class: "publish" %> </li>
+       <% end %>
+       </div>
+    
 　　　　
-
-          
-
+       
        <% end %>
 
       <% end %>
