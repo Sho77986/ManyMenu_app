@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_08_20_032035) do
 
   create_table "menus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.text "recommend_image_one"
+    t.string "recommend_image_one"
     t.string "recommend_price_one"
     t.string "recommend_calorie_one"
     t.string "recommend_allergies_one"
