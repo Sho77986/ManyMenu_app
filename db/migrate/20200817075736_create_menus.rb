@@ -28,7 +28,7 @@ class CreateMenus < ActiveRecord::Migration[6.0]
       t.string       :main_calorie_two 
       t.string       :main_allergies_two 
       t.string       :main_charm_two
-      t.string       :main_imege_three
+      t.string       :main_image_three
       t.string       :main_price_three
       t.string       :main_calorie_three
       t.string       :main_allergies_three 
