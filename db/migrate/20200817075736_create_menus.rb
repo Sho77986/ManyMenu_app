@@ -2,7 +2,7 @@ class CreateMenus < ActiveRecord::Migration[6.0]
   def change
     create_table :menus do |t|
       t.integer      :user_id     ,null: false  ,foreign_key: true 
-      t.text       :recommend_image_one
+      t.string       :recommend_image_one
       t.string       :recommend_price_one  
       t.string       :recommend_calorie_one   
       t.string       :recommend_allergies_one 
@@ -28,7 +28,7 @@ class CreateMenus < ActiveRecord::Migration[6.0]
       t.string       :main_calorie_two 
       t.string       :main_allergies_two 
       t.string       :main_charm_two
-      t.string       :main_imege_three
+      t.string       :main_image_three
       t.string       :main_price_three
       t.string       :main_calorie_three
       t.string       :main_allergies_three 
