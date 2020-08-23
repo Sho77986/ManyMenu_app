@@ -1,72 +1,208 @@
-<header class="header"> 
-  <h1 class="apple"><a href="/">ManyMenu</a></h1>
+<body> 
+ <header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+
+
+  <div class="user_login_logout">
+       <% if user_signed_in? %>
+       <div class="meneger-parent">
+        <%= link_to '一般の画面に戻る' ,"#", class: "meneger" %>
+       </div>
+       <%else%>
+       <div class="meneger-parent">
+        <%= link_to '事業者の方はここから' ,"#", class: "meneger" %>
+       </div>
+       <%end%>
+     
+   
+
+
+      <div class="user-management">
+          <% if user_signed_in? %>
+            <div><%= link_to  current_user.shop,  "yours", class: "log-in"%> </div> 
+            <div><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "log-out" %> </div> 
+          <% else %>
+            <div><%= link_to '事業者ログイン', new_user_session_path, class: "log-in" %></div>
+            <div><%= link_to '事業者新規登録', new_user_registration_path, class: "sign-up" %></div>
+          <% end %> 
+      </div>
+    </div>
  </header>
-  
-　<!--#検索機能-->
 
 
 
 
-<ul class='lists-right'>
-      <% if user_signed_in? %>
-        <li><%= link_to  current_user.shop,  "yours", class: "user-shopname" %> </li> 
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %> </li> 
-      <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
-      <% end %>
-       
- </ul>
-
-      <% if user_signed_in? %>
+ <div class="medium">
+     <% if user_signed_in?%>
+        <div>
+        <h2 class="publish-about">掲載について</h2>
+        </div>
+        <div class="manager-point">
           <%if Menu.find_by(user_id: current_user ) == nil %>
-           <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "publish" %> </li> 
+           <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "item1" %> </li> 
           <%else%>
-          <li><%= link_to  '掲載画面を確認する', menu_path(current_user.id) , class: "publish" %> </li>
-          <li><%= link_to  '掲載する品を編集する', edit_menu_path(current_user.id) , class: "publish" %> </li>
+          <li><%= link_to  '掲載画面を確認する', menu_path(current_user.id) , class: "item2" %> </li>
+          <li><%= link_to  '掲載する品を編集する', edit_menu_path(current_user.id) , class: "item3" %> </li>
           <%end%>
-
           <%if  Crean.find_by(user_id: current_user)  == nil  %>
-          <li><%= link_to  '衛生面、空き時間の表示を追加する', creans_path , class: "publish" %> </li>
+          <li><%= link_to  '衛生面、空き時間の表示を追加する', creans_path , class: "item4" %> </li>
           <%else%>
-          <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "publish" %> </li> 
+          <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "item5" %> </li> 
           <%end%>
-
-　　　　　　　<h4>QRコードの発行依頼は下記をクリック</h4>
-           
-           <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "publish" %> </li>
-          
-
-           <h4>自身で掲載、編集することが面倒な方は下記をクリック</h4>
-           <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "publish" %> </li>
-
+        </div>
+       <div class="manager-point2">
+         <div>
+           <h4 class="publish-about">QRコードの発行依頼は下記をクリック</h4>
+           <li><%= link_to  'QRコードを取り寄せる', qr_codes_path , class: "request" %> </li>
+         </div>
+         <div>
+           <h4 class="publish-about">自身で掲載が面倒な方は下記をクリック</h4>
+           <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "request" %> </li>
+         </div>
+       </div>
 
       <% else %>
 
-              
-            <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
-            <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
-            <%= form.submit "検索", class: "search-btn" %>
-            
+
+      <h5 class="searchs">来店したお店のおすすめと<br>ランキングをみてみよう！</h5>
+
+
+            <div class="search"> 
+               <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
+               <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
+               <%= form.submit "検索", class: "search-btn" %>
+            </div>
        
-       <h4>最新のおすすめはこちら"</div>
-       <div>
-       <% @users.each do |user|  %>
-       <%= user.shop%>
-       <%= link_to  "ここをクリック",menu_path(user.id) , class: "publish" %> </li> 
+       <h4 class="new-shop">最新の登録店舗はこちら</h4>
+         <div class="shop-all">
+           <% @users.each do |user|  %>
+           <%= user.shop%>
+           <%= link_to  "⇨⇨⇨気になった方はこちらをクリック⭐︎",menu_path(user.id) , class: "shop-click" %> 
+          </li> 
+          <% end %>
        <% end %>
        </div>
        <%# @menus.each do |menu| %>
       <%# link_to  "ここをクリック",menu_path(menu.user_id) , class: "publish" %>
        <%# end %>
-    
-　　　　
        
-       <% end %>
-
       <% end %>
 
-<ul>
-  <li><%= link_to 'その他 問い合わせ',  questions_path, class: "question" %></li>
-</ul>
+
+      <% if user_signed_in? %>
+      <%else%>
+      <h4 class="manymenu-production">Manymenuとは何か</h4>
+        <div class="manymenu-about">
+         ①各店舗選抜の１２品を掲載！<br>
+         ②おすすめや人気料理が一目瞭然に！　<br>
+         ③選びやすさを追求しました。
+         </div>
+
+      <h4 class="manymenu-use">お客様の使い方は２ステップ</h4>
+        <div class="many-users-image">
+          <div class="menu-use1-image"></div>
+          <div class="menu-use2-image"></div>
+        </div>
+        <div class="many-users">
+            <div class="menu-use1">
+            来店店舗のお店でQRを読み込む！<br>または検索！
+            </div>
+            <div class="menu-use2">
+           　おすすめ商品がすぐわかる！<br>さあ食べよう！
+            </div>
+        </div>
+
+
+       <h4 class="manymenu-use">事業者様の使い方も２ステップ(事業者編)</h4>
+       <div class="many-users-image">
+          <div class="menu-use1-image"></div>
+          <div class="menu-use2-image"></div>
+        </div>
+        <div class="many-users">
+            <div class="menu-use1">
+            新規登録し、メニューを制作する！
+            </div>
+            <div class="menu-use2">
+            qrコードシールを取り寄せ、各テーブルに貼り付けよう！
+            </div>
+          </div>
+        
+      <div class="border-view-index"></div>
+
+      <h4 class="manymenu-use">Manymenuのユーザーのメリット！</h4>
+        <div class="many-merits-image">
+          <div class="menu-merit1-image"></div>
+          <div class="menu-merit2-image"></div>
+          <div class="menu-merit3-image"></div>
+        </div>
+          <div class="merits">
+            <div class="merit1">
+            メニュー選びが早くなる！<br> 
+            友人や家族を待たせません！
+            </div>
+            <div class="merit2">
+            各店舗の空き時間を掲載！<br>
+            混雑を避けれます！
+            </div>
+            <div class="merit3">
+            衛生面にも配慮！<br>
+            店舗の感染対策を確認できる！
+            </div>
+          </div>
+
+      
+      <h4 class="manymenu-use">Manymenuの事業者のメリット！</h4>
+       <div class="many-merits-image">
+          <div class="menu-merit4-image"></div>
+          <div class="menu-merit5-image"></div>
+          <div class="menu-merit6-image"></div>
+        </div>
+         <div class="merits">
+            <div class="merit1">
+            おすすめが一目で伝わります！<br>
+            結果選択もパラドックスにより<br>
+            満足度の向上が見込めます！
+            </div>
+            <div class="merit2">
+            メニューを選ぶ時間の短縮化!<br>
+            回転率の向上！
+            </div>
+            <div class="merit3">
+            感染対策や衛生面をネットに公開！<br>
+            お客様に安心を与えます！
+            </div>
+          </div>
+          
+      
+         <div class="back-image-view-shape">
+           <h5 class="searchs">Let`s use！</h5>
+
+           <div class="search"> 
+               <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
+               <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
+               <%= form.submit "検索", class: "search-btn" %>
+               <%end%>
+            </div>    
+        </div>
+        <%end%>
+ </div>
+
+ <footer class="footer">
+  <div class='footer-contents'>
+   <div> ManyMenuについて</div>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+    </div>
+  </div>
+ </footer>
+</body>
  
