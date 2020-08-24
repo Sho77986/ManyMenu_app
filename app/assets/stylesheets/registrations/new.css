@@ -1,0 +1,85 @@
+
+
+
+.Sign-up{
+ display: flex;
+ justify-content: space-around;
+}
+
+.news{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.712);
+  background-image: url('/assets/tile.png');
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+
+.sign-able{
+  background-color: rgba(255, 99, 71,0.3);
+  font-size: 15px;
+}
+
+.sign-name{
+  font-size: 18px;
+}
+
+.sign-text{
+  width: 250px;
+  height: 30px;
+  border-radius: 15%;
+  margin-top: 10px;
+}
+
+.img-permit{
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 22vw;
+  padding: 20px;
+  background-image: url('/assets/get.png');
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.Sign-ups{
+  display: flex;
+  justify-content: space-around;
+}
+
+.Sign-upss{
+  font-size: 20px;
+  width: 150px;
+  font-family: cursive;
+}
+
+
+.newsss{
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.712);
+  background-image: url('/assets/tile.png');
+  background-blend-mode: lighten;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top center;
+  height: 200px;
+  align-items: center;
+}
+
+.login-btn{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 100px;
+  margin-top: 40px;
+  height: 40px;
+  font-size: 20px;
+}

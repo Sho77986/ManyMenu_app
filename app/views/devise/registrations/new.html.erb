@@ -1,123 +1,141 @@
-<div class="container">
-    <h2>Sign up</h2>
-    <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
+
+
+
+
+ <header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+  </header>
+
+
+
+
+
+     <h2 class="Sign-up">Sign up</h2>
+
+ <div class="news">
+   <div class="new">
+      <%= form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f| %>
       <%= devise_error_messages! %>
-
+     <div class="new-a">
       
-      <div class="new-items">
-      <div class="weight-bold-text">
-        氏名
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :name, class:"text", placeholder:"田中太郎", maxlength:"20" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        お店の名前
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :shop, class:"items-text", placeholder:"とん亭小郡店", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        メールアドレス
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.email_field :email, class:"items-text", placeholder:"abc@com", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        電話番号
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :call_number, class:"text", placeholder:"01234567890", maxlength:"11" %>
-    </div> 
-
-
-　　<h3>お店の情報</h3>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        都道府県
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :prefecture, class:"items-text", placeholder:"福岡県", maxlength:"20" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        　市町村
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :city, class:"items-text", placeholder:"福岡市", maxlength:"20" %>
-    </div> 
-
-
-　　　<div class="new-items">
-      <div class="weight-bold-text">
-        住所
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :address, class:"text", placeholder:"早良区〇〇丁目〇〇", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        郵便番号
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :postal_code, class:"items-text", placeholder:"012-3456", maxlength:"10" %>
-    </div> 
-
-
-    <div class="form-group"> 
-      <div class='form-text-wrap'>
-        <label class="form-text">パスワード</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.password_field :password, class:"input-default", placeholder:"6文字以上の半角英数字" %>
-      <p class='info-text'>※英字と数字の両方を含めて設定してください</p>
-    </div>
-
-     <div class="form-group">
-      <div class='form-text-wrap'>
-        <label class="form-text">パスワード(確認)</label>
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.password_field :password, class:"input-default", placeholder:"同じパスワードを入力して下さい" %>
+        <h3 class="user-infomation">個人情報</h3>
+        <div class="sign-name">
+          <div class="sign-content">
+             氏名
+            <span class="sign-able">必須</span>
+          </div>
+          <%= f.text_field :name, class:"sign-text", placeholder:"田中太郎", maxlength:"20" %>
+        </div> 
+        <div class="sign-name">
+          <div class="sign-content">
+           電話番号
+           <span class="sign-able">必須</span>
+          </div>
+          <%= f.text_field :call_number, class:"sign-text", placeholder:"01234567890", maxlength:"11" %>
+       </div> 
+        <div class="sign-name">
+          <div class="sign-content">
+            メールアドレス
+            <span class="sign-able">必須</span>
+          </div>
+          <%= f.email_field :email, class:"sign-text", placeholder:"abc@com", maxlength:"40" %>
+        </div> 
+        <div class="sign-name">
+          <div class='form-text-wrap'>
+           <label class="sign-content">パスワード</label>
+           <span class="sign-able">必須</span>
+          </div>
+          <%= f.password_field :password, class:"sign-text", placeholder:"6文字以上の半角英数字" %>
+        </div>
+        <div class="sign-name">
+          <div class='form-text-wrap'>
+            <label class="sign-content">パスワード(確認)</label>
+            <span class="sign-able">必須</span>
+          </div>
+          <%= f.password_field :password, class:"sign-text", placeholder:"同じパスワードを入力して下さい" %>
+        </div>
+            <p class='info-text'>※英字と数字の両方を<br>含めて設定してください</p> 
+      </div> 
+     </div>
+        <div class="new-b">
+         <h3>お店の情報</h3>
+          <div class="sign-name">
+            <div class="sign-content">
+              お店の名前
+              <span class="sign-able">必須</span>
+            </div>
+            <%= f.text_field :shop, class:"sign-text", placeholder:"とん亭小郡店", maxlength:"40" %>
+           </div> 
+         <div class="sign-name">
+           <div class="sign-content">
+              郵便番号
+             <span class="sign-able">必須</span>
+           </div>
+           <%= f.text_field :postal_code, class:"sign-text", placeholder:"012-3456", maxlength:"10" %>
+          </div> 
+         <div class="sign-name">
+           <div class="sign-content">
+             都道府県
+             <span class="sign-able">必須</span>
+           </div>
+           <%= f.text_field :prefecture, class:"sign-text", placeholder:"福岡県", maxlength:"20" %>
+         </div> 
+         <div class="sign-name">
+           <div class="sign-content">
+             市町村
+             <span class="sign-able">必須</span>
+           </div>
+           <%= f.text_field :city, class:"sign-text", placeholder:"福岡市", maxlength:"20" %>
+         </div>
+           
+          <div class="sign-name">
+            <div class="sign-content">
+              住所
+              <span class="sign-able">必須</span>
+           </div>
+           <%= f.text_field :address, class:"sign-text", placeholder:"早良区〇〇丁目〇〇", maxlength:"40" %>
+          </div> 
+        </div>  
      </div>
 
 
-      <h3>飲食店を経営されている証拠として、営業許可証を写真にて送付してください。</h3>
-      <div class="img-upload">
-         <div class="weight-bold-text">
-        飲食店営業許可証
-           <span class="indispensable">必須</span>
-         </div>
-         <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
-           <%= f.file_field :image %>
-         </div>
-      </div>
 
 
-      
-      <div class="actions">
-        <%= f.submit "Sign up" %>
-      </div>
-    <% end %>
+     <h3 class="Sign-up">飲食店を経営されている証拠として、営業許可証を写真にて送付してください。</h3>
+          <div class="img-permit">
+             <div class="weight-bold-texts">
+               飲食店営業許可証
+               <span class="indispensables">必須</span>
+             </div>
+             <div class="click-uploads">
+               <%= f.file_field :image %>
+             </div>
+         </div>
+     
+
+
+        <div class="Sign-ups">
+          <%= f.submit "Sign up" , class:"Sign-upss" %>
+          </div>
+        <% end %>      
+<div class="empty"></div>
+
+
+
+<footer class="footer">
+ <div> ManyMenuについて</div>
+  <div class='footer-contents'>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+    </div>
   </div>
+ </footer>
