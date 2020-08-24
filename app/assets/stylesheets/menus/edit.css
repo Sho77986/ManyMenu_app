@@ -1,0 +1,31 @@
+
+
+.flex{
+  display: flex;
+  overflow: hidden;
+  overflow: scroll;
+  margin: 30px;
+  background-color: rgba(188, 226, 144, 0.3);
+}
+.load{
+  display: block;
+ 
+}
+
+.price{
+  display: block;
+  justify-content: center;
+  margin: 5px 20px;
+  width: 200px;
+}
+
+
+.loadss{
+  display: flex;
+  justify-content: center;
+}
+
+.sell-btn{
+  padding: 7px 20px;
+  margin: 40px  20px;
+}

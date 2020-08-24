@@ -203,16 +203,16 @@ li{
   overflow-y: scroll;
   display: block;
   background-color: black;
-  background-color: rgba(25, 255, 255, 0.603);
+  background-color: rgba(25, 255, 255, 0.303);
   padding: 20px;
   margin: auto;
   height: 270px;
-  width: 70vw;
+  width: 60vw;
 }
 .shop-click{
   font-size: 25px;
   background-color: black;
-  background-color: rgb(255,255,255,0.4);
+  background-color: rgb(255,255,255,0.2);
   text-decoration: none;
   display: block;
   padding: 10px 30px;
@@ -252,9 +252,12 @@ li{
 }
 .border-view-index{
   background-color: black;
+  text-decoration: underline dashed red;
   margin-top: 20px;
   border: lawngreen;
-  height: 10px;
+  height: 1px;
+
+
 }
 .manymenu-use{
   font-size: 30px;
