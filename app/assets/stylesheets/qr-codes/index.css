@@ -1,0 +1,90 @@
+.sells-name{
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.sell-text{
+  font-size: 18px;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.sell-size{
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.sell-stext{
+  font-size: 18px;
+  
+  background-color: rgba(218, 113, 215,0.3);
+}
+
+.price-input{
+  font-size: 30px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+
+.sell-end2{
+  margin-top: 30px;
+  font-size: 30px;
+}
+
+.sell-end{
+  font-size: 30px;
+}
+
+.sells-extra{
+  background-color: rgba(152, 251, 152,0.4);
+  display: grid;
+  justify-content: center;
+  margin:  0 auto;
+  padding: 10px 300px;
+  font-size: 17px;
+}
+
+.sellss-text{
+  font-size: 15px;
+  width: 800px;
+}
+
+
+
+.sell-attention{
+ display: block;
+ margin-bottom: 0px;
+}
+
+.attention-sell{
+  padding: 10px 0px;
+}
+
+.attention-sell2{
+  padding-bottom: 100px;
+  padding-top: 10px;
+}
+
+.sells-btns{
+ text-align: center;
+ justify-content: center;
+}
+
+.sell-btn{
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.footer2{
+    height: 50px;
+    background-color: rgba(231, 71, 191, 0.7);
+    width: 100vw;
+    margin-top: 0px;
+    padding-bottom:  50px;
+    color: #FFF;
+    text-align: center;
+    position: absolute;
+    bottom: 0px;
+  
+}

@@ -1,31 +1,47 @@
+
+
+<header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+</header>
+
+
+
+
 <h2 class="items-sell-title">掲載ページ制作依頼</h2>
     <%=form_with  url: publish_requests_path, method: :post,  local: true do |f| %>  
 
 
 
     <%# 商品名と商品説明 %>
-    <h4>  ※ホームページがある方</h4>
-    <h5>  ※一番下にある問い合わせ欄に、お店のURLをお貼りください。</h5>
+<div class="home-page-haveno">
+  <div class="home-page-have">  
+    <div><b> 　 ※ホームページがある方</b></div>
+    <div>  　※一番下の問い合わせにお店のURLをお貼りください。</div>
+  </div>
+  <div class=home-page-no>
+    <div><b> 　 ※ホームページがない方</b></div>
+     <div>  　※写真が10枚を超える際は、お問い合わせください。</div>
+    <div>  　※お店のメニュー表を撮ってお送りください。</div>
+  </div>
+</div>    
 
-
-    <h4>  ※ホームページがない方</h4>
-    <h5>  ※お店のメニュー表を撮ってお送りください。</h5>
-    <h5>  ※写真が10枚を超える際は、一度お問い合わせください。</h5>
-    
-
-
-  　
-　　 <div class="img-upload">
+ 
+<h2 class="items-sell-title">メニュー表の写真</h2>
+  <div> クリックしてファイルをアップロード</div>
+  <div class="img-uploads1">
+     <div class="img-upload">
          <div class="weight-bold-text">
-        メニュー表の写真、1枚目
+        1枚目
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_a %>
          </div>
+     
       </div>
 
       <div class="img-upload">
@@ -34,9 +50,7 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
+           
            <%= f.file_field :image_b %>
          </div>
       </div>
@@ -47,9 +61,6 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_c %>
          </div>
       </div>
@@ -60,9 +71,6 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_d %>
          </div>
       </div>
@@ -73,23 +81,19 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
+           
            <%= f.file_field :image_e %>
          </div>
       </div>
-
-
+    </div>
+    <div class="img-uploads2">
       <div class="img-upload">
          <div class="weight-bold-text">
         6枚目
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
+           
            <%= f.file_field :image_f %>
          </div>
       </div>
@@ -101,9 +105,6 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_g %>
          </div>
       </div>
@@ -115,9 +116,6 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_h %>
          </div>
       </div>
@@ -129,9 +127,6 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
            <%= f.file_field :image_i %>
          </div>
       </div>
@@ -144,27 +139,45 @@
            <span class="indispensable"></span>
          </div>
          <div class="click-upload">
-           <p>
-             クリックしてファイルをアップロード
-           </p>
+         
            <%= f.file_field :image_j %>
          </div>
       </div>
+    </div>
 
 
+    <div class="sells-extra">
+        <div class="weight-bold-text">
+         お問い合わせ、URLはこちらへ
+        </div>
+        <%= f.text_area :publish_text, class:"sellss-text", placeholder:"ex: 登録が面倒なので、お願いいたします！" ,rows:"7" ,maxlength:"1000" %>
+     </div>
 
-    <div class="items-explain">
-      <div class="weight-bold-text">
-        問い合わせ内容
-        <span class="indispensable"></span>
+
+      <div class="sells-btns">
+        <div>
+          <%= f.submit "依頼する" ,class:"sell-btnsss" %>
+        </div>
+        <div>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
       </div>
-        <%= f.text_area :publish_text, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
-    </div>
-
-
-
-      <div class="sell-btn-contents">
-      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-    </div>
+    <div class="empty"></div>
     <%end%>
+
+
+
+
+ <footer class="footer2">
+   <div> ManyMenuについて</div>
+    <div class='footer-contents'>
+      <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+      </div>
+    </div>
+  </footer>

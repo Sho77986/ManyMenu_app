@@ -1,62 +1,97 @@
 
-<div>衛生面の取り組み</div>
 
+ <header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+  </header>
+
+
+    
 
     <%=form_with  model: @crean, url: crean_path, method: :put,  local: true do |f| %> 
-    
-　　 <div class="crean-items">
-      <div class="weight-bold-text">
-       清潔にするための取り組み。
-        <span class="indispensable">必須</span>
+  <div class="b-creans1"> 
+   
+   <div class="creans1">
+     <div class="crean-name">衛生面の取り組み⭐︎</div>
+      <div class="crean-tab">
+        <div class="crean-content">
+         清潔にするための取り組み。
+          <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :crean_action, class:"crean-text", placeholder:"毎回テーブルをこまめに拭いています", maxlength:"200" %>
+     </div>
+
+      <div class="crean-tab">
+        <div class="crean-content">
+         消毒に関して 
+          <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :disinfection_action, class:"crean-text", placeholder:"店内入り口にアルコール消毒液を置いてます", maxlength:"200" %>
       </div>
-      <%= f.text_field :crean_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
-    </div>
 
-    <div class="crean-items">
-      <div class="weight-bold-text">
-       消毒に関して
-        <span class="indispensable">必須</span>
+      <div class="crean-tab">
+        <div class="crean-content">
+         その他衛生面での取り組み。
+          <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :other_action, class:"crean-text", placeholder:"お客様間での距離を2メートル必ず開くようテーブルを配置してます", maxlength:"200" %>
+     </div>
+   </div>
+   <div class="creans1">
+    <div class="crean-name">混雑回避時間⭐︎</div>
+      <div class="crean-tab">
+        <div class="crean-content">
+         本日の混雑回避時間。
+          <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :today_empty_time, class:"crean-text", placeholder:"夜遅い時間帯は空いていると見込まれます", maxlength:"200" %>
       </div>
-      <%= f.text_field :disinfection_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
-    </div>
 
-    <div class="crean-items">
-      <div class="weight-bold-text">
-       その他衛生面での取り組み。
-        <span class="indispensable">必須</span>
+      <div class="crean-tab">
+        <div class="crean-content">
+         明日の混雑回避時間(予想)
+         <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :tomorrow_empty_time, class:"crean-text", placeholder:"本日と同様に深夜が空いてそうです", maxlength:"200" %>
       </div>
-      <%= f.text_field :other_action, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
-    </div>
 
-    <div class="crean-items">
-      <div class="weight-bold-text">
-       本日の混雑回避時間。
-        <span class="indispensable">必須</span>
+
+      <div class="crean-tab">
+        <div class="crean-content">
+         週末の混雑時間(予想)
+        <span class="crean-able">必須</span>
+        </div>
+        <%= f.text_area :weekend_empty_time, class:"crean-text", placeholder:"週末はお避けください、かなりの混雑が予想されます。", maxlength:"200" %>
       </div>
-      <%= f.text_field :today_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
     </div>
+  </div>
 
-    <div class="crean-items">
-      <div class="weight-bold-text">
-       明日の混雑回避時間(予想)
-        <span class="indispensable">必須</span>
+       <div class="sells-btns">
+        <div>
+          <%= f.submit "登録する" ,class:"empty-btnsss" %>
+        </div>
+        <div>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
       </div>
-      <%= f.text_field :tomorrow_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
+    <div class="empty"></div>
+       <%end%>
+
+
+
+<footer class="footer">
+ <div> ManyMenuについて</div>
+  <div class='footer-contents'>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
     </div>
-
-
-    <div class="crean-items">
-      <div class="weight-bold-text">
-       週末の混雑時間(予想)
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :weekend_empty_time, class:"crean-text", placeholder:"メニュー記載方法について", maxlength:"50" %>
-    </div>
-
-
-
-      <div class="sell-btn-contents">
-      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
-
-    <%end%>
+  </div>
+ </footer>

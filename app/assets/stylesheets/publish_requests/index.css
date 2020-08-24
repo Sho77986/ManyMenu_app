@@ -1,0 +1,49 @@
+.img-uploads1{
+ display: flex;
+ overflow: hidden;
+ overflow-x: scroll;
+ margin: 30px;
+}
+
+
+.img-uploads2{
+  display: flex;
+  overflow: hidden;
+  overflow-x: scroll;
+  margin: 30px;
+ }
+
+ .img-upload{
+   background-color: rgba(200, 50, 50, 0.3);
+   margin: 5px;
+   height: 80px;
+   width: 240px;
+ }
+
+ .home-page-haveno{
+   display: flex;
+   justify-content:space-around;
+ }
+
+ .home-page-have{
+   background-color: rgba(162, 238, 118,0.5);
+   font-size: 15px;
+  border-radius: 50px;
+ }
+
+
+ .home-page-no{
+  background-color: rgba(162, 238, 118,0.5);
+  font-size: 15px;
+ border-radius: 50px;
+}
+
+.sell-btnsss{
+  font-size: 18px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.empty{
+  padding: 60px;
+}

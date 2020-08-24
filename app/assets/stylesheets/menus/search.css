@@ -1,0 +1,46 @@
+
+
+.search{
+  display: flex;
+}
+
+.search-content{
+  display: flex;
+  justify-content: space-around;
+  font-size: 18px;
+  margin: 20px 30vw;
+  padding: 20px 60px;
+  border-radius: 70%;
+  background-color: rgba(127, 255, 0,0.1);
+}
+
+
+.search-shop{
+  font-size: large;
+}
+.search-all{
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  overflow: scroll;
+  display: block;
+  background-color: black;
+  background-color: rgba(25, 255, 0, 0.263);
+  padding: 20px;
+  margin:  20px auto  0px;
+  height: 200px;
+  width: ４0vw;
+  border-radius: 10%;
+}
+
+
+
+.search-click{
+  font-size: 17px;
+  background-color: black;
+  background-color: rgb(255,255,0,0.1);
+  text-decoration: none;
+  display: block;
+  padding: 0px 20px;
+}
+

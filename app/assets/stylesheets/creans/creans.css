@@ -1,0 +1,44 @@
+
+.crean-name{
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  background-color: aquamarine;
+  border-radius: 90%;
+}
+
+.b-creans1{
+  display: flex;
+  justify-content: space-around;
+}
+
+.creans1{
+  
+}
+
+.crean-tab{
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.crean-content{
+  font-size: 20px;
+}
+
+.crean-able{
+  background-color: rgba(221, 160, 221,0.4);
+  font-size: 14px;
+}
+
+.crean-text{
+  border-radius: 10%;
+  height: 55px;
+  width: 330px;
+}
+
+.empty-btnsss{
+  font-size: 20px;
+  margin-bottom: 20px;
+}

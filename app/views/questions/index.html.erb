@@ -1,53 +1,74 @@
 
+<header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+</header>
 
-<h2 class="items-sell-title">問い合わせ内容を入力</h2>
+
+    <h2 class="title">問い合わせ内容を入力</h2>
+  
     <%=form_with  url: questions_path, method: :post,  local: true do |f| %>  
 
 
-
-    <%# 商品名と商品説明 %>
-    <div class="new-items">
-      <div class="weight-bold-text">
-        email
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :q_email, class:"items-text", placeholder:"abc@com", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        電話番号
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :q_call_number, class:"items-text", placeholder:"12345678901", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="new-items">
-      <div class="weight-bold-text">
-        問い合わせ事項
-        <span class="indispensable">必須</span>
-      </div>
-      <%= f.text_field :q_reason, class:"items-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
-    </div> 
-
-
-
-    <div class="items-explain">
-      <div class="weight-bold-text">
-        問い合わせ内容
-        <span class="indispensable">必須</span>
-      </div>
-        <%= f.text_area :q_text, class:"items-text", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+  <div class="questions-all">
+   <div class="a">
+      <div class="questions">
+        <div class="questions-text">
+          email
+          <span class="questioons-able">必須</span>
+        </div>
+        <%= f.text_field :q_email, class:"question-text", placeholder:"abc@com", maxlength:"40" %>
+      </div> 
+      <div class="questions">
+        <div class="questions-text">
+          電話番号
+         <span class="questioons-able">必須</span>
+        </div>
+        <%= f.text_field :q_call_number, class:"question-text", placeholder:"12345678901", maxlength:"40" %>
+      </div> 
+        <div class="questions">
+          <div class="questions-text">
+            問い合わせ事項
+           <span class="questioons-able">必須</span>
+          </div>
+        <%= f.text_field :q_reason, class:"question-text", placeholder:"メニュー記載方法について", maxlength:"40" %>
+        </div> 
     </div>
-
-
-
-      <div class="sell-btn-contents">
-      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+    <div class="b">
+      <div class="questions1">
+        <div class="questions-text1">
+          問い合わせ内容
+          <span class="questioons-able1">必須</span>
+        </div>
+          <%= f.text_area :q_text, class:"question-text1", placeholder:"問い合わせのお申し込みをしたいのですが、やり方がわかりません" ,rows:"7" ,maxlength:"1000" %>
+      </div>
     </div>
-    <%end%>
+  </div>
+       <div class="question-btns">
+          <%= f.submit "問い合わせる" ,class:"question-btn" %>
+       </div>
+       <div>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+       </div>
+  
+      <%end%>
+   
+  
+
+
+<footer class="footer">
+ <div> ManyMenuについて</div>
+  <div class='footer-contents'>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+    </div>
+  </div>
+</footer>

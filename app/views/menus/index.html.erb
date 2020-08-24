@@ -10,11 +10,11 @@
   <div class="user_login_logout">
        <% if user_signed_in? %>
        <div class="meneger-parent">
-        <%= link_to '一般の画面に戻る' ,"#", class: "meneger" %>
+        <%= link_to '　一般の画面に戻る' ,"#", class: "meneger" %>
        </div>
        <%else%>
        <div class="meneger-parent">
-        <%= link_to '事業者の方はここから' ,"#", class: "meneger" %>
+        <%= link_to '　事業者の方はここから' ,"#", class: "meneger" %>
        </div>
        <%end%>
      
@@ -38,6 +38,7 @@
 
  <div class="medium">
      <% if user_signed_in?%>
+     <div class ="tile">
         <div>
         <h2 class="publish-about">掲載について</h2>
         </div>
@@ -64,7 +65,7 @@
            <li><%= link_to  '掲載依頼をする', publish_requests_path , class: "request" %> </li>
          </div>
        </div>
-
+      </div>
       <% else %>
 
 
@@ -109,25 +110,25 @@
         </div>
         <div class="many-users">
             <div class="menu-use1">
-            来店店舗のお店でQRを読み込む！<br>または検索！
+            ⒈来店店舗のお店でQRを読み込む！<br>　または検索！
             </div>
             <div class="menu-use2">
-           　おすすめ商品がすぐわかる！<br>さあ食べよう！
+         ⒉おすすめ商品がすぐわかる！<br>　さあ食べよう！
             </div>
         </div>
 
 
-       <h4 class="manymenu-use">事業者様の使い方も２ステップ(事業者編)</h4>
+       <h4 class="manymenu-use">事業者様の使い方も２ステップ</h4>
        <div class="many-users-image">
           <div class="menu-use1-image"></div>
           <div class="menu-use2-image"></div>
         </div>
         <div class="many-users">
             <div class="menu-use1">
-            新規登録し、メニューを制作する！
+            ⒈新規登録し、メニューを制作する！
             </div>
             <div class="menu-use2">
-            qrコードシールを取り寄せ、各テーブルに貼り付けよう！
+            ⒉qrコードシールを取り寄せ、<br>　各テーブルに貼り付けよう！
             </div>
           </div>
         

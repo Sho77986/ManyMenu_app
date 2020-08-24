@@ -1,21 +1,50 @@
   
-    <%= form_with(url:  search_menu_path(@users.ids), local: true, method: :get, class: "search-form") do |form| %>
+ 
+ <header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+</header>
+     <div class="search-content">他の検索はこちら</div>
+    <div class="search">
+       <%= form_with(url:  search_menu_path(@users.ids), local: true, method: :get, class: "search-form") do |form| %>
        <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
        <%= form.submit "検索", class: "search-btn" %>
+       <%end%>
+    </div>
+
+       <div class="search-content">検索結果はこちら</div>
+      
+      <div class="search">
+         
+           <% @users.each do |user| %>
+          <div class="search-all">
+           <%= user.shop%>
+           <%= link_to  "⇨⇨⇨気になった方はこちらをクリック⭐︎",menu_path(user.id), class: "search-click" %>
+           <%end %>
+          </div>
+       </div>
+      
     
-      <div >"検索結果はこちら"
-       <% @users.each do |user| %>
-        <div>
-        <%= user.shop%>
-        <%= link_to  "ここをクリック",menu_path(user.id) %>
-        <%end %>
-        </div>
-      </div>
-
-
-    <%end%>
 
 
   <%=link_to 'もどる', root_path, class:"back-btn" %>
 
 
+<div class="empty"></div>
+
+ <footer class="footer">
+ <div> ManyMenuについて</div>
+  <div class='footer-contents'>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+    </div>
+  </div>
+ </footer>

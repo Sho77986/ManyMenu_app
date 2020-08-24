@@ -1,6 +1,15 @@
 
 
-<h2 class="items-sell-title">QRコード依頼</h2>
+<header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+</header>
+
+<body class="aaaaa">
+   <h2 class="title">QRコード依頼</h2>
     <%=form_with  url:  qr_codes_path, method: :post,  local: true do |f| %>  
 
 
@@ -8,78 +17,100 @@
     <%# 商品名と商品説明 %>
     
 
-     <div class="sell-price">
-      <div class="weight-bold-text question-text">
-        <span>販売枚数<br>小サイズ(1枚10円)     テーブルに貼れるシールです！
-        <br>極大サイズ(1枚100円)     B4サイズの玄関等の掲載にピッタリ！</span>
-        <a class="question" href="#"></a>
-      </div>
-      <div>
+     　<div class="sells-name">
+          <div class="sell-text">
+            小サイズ(1枚10円)<br>テーブルに貼れるシールです！<br>購入目安数＝椅子の数
+          </div>
+          <div class="sell-text">
+            極大サイズ(1枚100円)<br>B4で入り口掲載にピッタリ！<br>目安購入数＝３つ
+          </div>
+       </div>
+    
+      <div class="sells-name">
         <div class="price-content">
-          <div class="price-text">
+          <div class="sell-size">
             <span>小サイズ</span>
-            <span class="indispensable">必須</span>
+            <span class="sell-stext">必須</span>
           </div>
           
-          <%= f.text_field :number_small, class:"price-input1", placeholder:"例）300" %>
+          <%= f.text_field :number_small, class:"price-input", placeholder:"例）300" %>
           <span class="sell-yen">枚</span>
         </div>
-
-
-　　　　　<div class="price-content">
-          <div class="price-text">
-            <span>極大サイズ</span>
-            <span class="indispensable">必須</span>
-          </div>
-        
-          <%= f.text_field :number_big, class:"price-input2", placeholder:"例）300" %>
-          <span class="sell-yen">枚</span>
-        </div>
-
 
         <div class="price-content">
+          <div class="sell-size">
+            <span>極大サイズ</span>
+            <span class="sell-stext">必須</span>
+          </div>
+        
+          <%= f.text_field :number_big, class:"price-input", placeholder:"例）300" %>
+          <span class="sell-yen">枚</span>
+         </div>
+      </div>
+
+
+      <div class="sells-name">
+        <div class="sell-end">
           <span>税金 (10%)</span>
           <span>
             <span id='add-tax-price'></span>円
           </span>
         </div>
-        <div class="price-content">
+        <div class="sell-end">
           <span>送料 一律500円</span>
         </div>
-        <div class="price-content">
+      </div>  
+      <div class="sells-name">
+        <div class="sell-end2">
           <span>お支払い価格</span>
           <span>
             <span id='price'></span>円
         </div>
-        </span>
       </div>
     </div>
 　　
 
-
-
-    <div class="items-explain">
-      <div class="weight-bold-text">
-        その他
-        <span class="indispensable"></span>
+     <div class="sells-extra">
+        <div class="weight-bold-text">
+         その他要望等はこちらへ
+        </div>
+        <%= f.text_area :qr_text, class:"sellss-text", placeholder:"ex: 早めに送付していただけるとありがたいです" ,rows:"7" ,maxlength:"1000" %>
+     </div>
+      <div class="sells-btns">
+        <div>
+          <%= f.submit "購入する" ,class:"sell-btn" %>
+        </div>
+        <div>
+          <%=link_to 'もどる', root_path, class:"back-btn" %>
+        </div>
       </div>
-        <%= f.text_area :qr_text, class:"items-text", placeholder:"ex: 早めに送付していただけるとありがたいです" ,rows:"7" ,maxlength:"1000" %>
-    </div>
-
-
-    <div class="weight-bold-text">
+    <div class="sell-attention">
+      <div class="attention-sell">
         ※　お支払い方法は口座入金となっております。
-         <span class="indispensable"></span>
-      <div class="sell-btn-contents">
-       <div class="weight-bold-text">
+      </div>
+      <div class="attention-sell">
         ※　入金はこの問い合わせ送信後、登録されたemailにてお知らせいたします。
-        <span class="indispensable"></span>
-      <div class="sell-btn-contents">
-     <div class="weight-bold-text">
+      </div>
+     <div class="attention-sell2">
         ※　入金が確認され次第送付いたします。
-        <span class="indispensable"></span>
-      <div class="sell-btn-contents">
-      <%= f.submit "問い合わせる" ,class:"sell-btn" %>
-      <%=link_to 'もどる', root_path, class:"back-btn" %>
+      </div>
     </div>
+    
     <%end%>
+
+</body>
+
+
+ <footer class="footer2">
+   <div> ManyMenuについて</div>
+    <div class='footer-contents'>
+      <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+      </div>
+    </div>
+  </footer>
