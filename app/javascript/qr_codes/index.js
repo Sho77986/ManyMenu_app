@@ -8,7 +8,7 @@ window.addEventListener("load", function(){
 
 
   
-  priceFieldOne.addEventListener("keyup", function(){ 
+ 
    priceFieldTwo.addEventListener("keyup", function(){ 
   
 
@@ -23,7 +23,6 @@ window.addEventListener("load", function(){
     $('#add-tax-price').html(SalesCommission);
     $('#price').html(Profit); 
  
-   })
-  }) 
+   }) 
 
 });
