@@ -1,6 +1,7 @@
 class CreansController < ApplicationController
 
   def index
+    @crean=Crean.all
   end
 
   def create
