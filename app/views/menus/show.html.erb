@@ -1,7 +1,405 @@
 
 
+ <header class="header" > 
+ <%#= image_tag 'get.png', class: "header_image"%>
+  <div class="manymenu"><a style="text-decoration: none;",href="/">ManyMenu</a>
+     <div class="concept"><a style="text-decoration: none;",href="#">Don`t get lost in the menu!</a>
+     </div>
+  </div>
+</header>
 
-<%=  image_tag @menu.recommend_image_two.url%>
+        <div class="name-display"><%= @user.shop%></div>
+       
+     <div class="show-back-color">
+        <div class="imfomation-display">
+          <div class="crean-displays">
+             <div class="crean-display"> 
+             衛生面
+             </div>
+               <div class="crean-display">
+               <%= @crean.crean_action  %>
+               </div>
+             <div class="crean-display">
+             消毒
+             </div>
+             <div class="crean-display">
+             <%= @crean.disinfection_action %>
+             </div>
+             <div class="crean-display">
+             その他取り組み
+             </div>
+             <div class="crean-display">
+             <%= @crean.other_action  %>
+             </div>
+          </div>
+          <div class="empty-displays">
+             <div class="empty-display">
+             本日の空席時間
+             </div>
+             <div class="empty-display">
+             <%= @crean.today_empty_time  %>
+             </div>
+             <div class="empty-display">
+             明日の空席予想
+             </div>
+             <div class="empty-display">
+             <%= @crean.tomorrow_empty_time  %>
+             </div>
+             <div class="empty-display">
+             今週末の空席予想
+             </div>
+             <div class="empty-display">
+             <%= @crean.weekend_empty_time %>
+             </div>
+          </div>
+        </div>
 
 
-<%=  image_tag @menu.recommend_image_one.url%>
+
+
+      
+           <div class="sub-other">
+             <div class="display-line">
+                <div class="layout">
+                おすすめのメニュー１位
+                </div>
+                <% if  Menu.where(recommend_image_one: @recommend_image_one) != nil %>
+                <%=  image_tag @menu.recommend_image_one.url  ,class: "show-image"%>
+                <%else%>
+                <form> No image </form>
+                <%end%>
+                <div class="layout">
+                価格
+                <%= @menu.recommend_price_one  %>円 
+                </div>
+                <div class="layout">
+               カロリー
+                <%= @menu.recommend_calorie_one  %>
+                </div>
+                <div class="layout">
+               アレルギー
+                <%= @menu.recommend_allergies_one  %>
+                </div>
+                <div class="layout2">
+                魅力
+                <%= @menu.recommend_charm_one %>
+                </div>
+             </div>
+             <div class="display-line">
+                <div class="layout">
+                おすすめのメニュー２位
+                </div>
+                <% if  Menu.where(recommend_image_two: @recommend_image_two) != nil %>
+                <%=  image_tag @menu.recommend_image_two.url ,class: "show-image"%>
+                <%else%>
+                <form> No image </form>
+                <%end%>
+                <div class="layout">
+                価格
+                <%= @menu.recommend_price_two %>円
+                </div>
+                <div class="layout">
+               カロリー
+               <%= @menu.recommend_calorie_two %>
+               </div>
+               <div class="layout">
+               アレルギー
+               <%= @menu.recommend_allergies_two %>
+               </div>
+               <div class="layout2">
+               魅力
+               <%= @menu.recommend_charm_two %>
+               </div>
+             </div>
+             <div class="display-line">
+               <div class="layout" >
+               おすすめのメニュー３位
+               </div>
+               <% if  Menu.where(recommend_image_three: @recommend_image_three) != nil %>
+               <%=  image_tag @menu.recommend_image_three.url , class: "show-image"%>
+               <%else%>
+               <form> No image </form>
+               <%end%>
+               <div class="layout">
+               価格
+               <%= @menu.recommend_price_three %>円
+               </div>
+               <div class="layout">
+               カロリー
+                <%= @menu.recommend_calorie_three %>
+                </div>
+               <div class="layout">
+               アレルギー
+                <%= @menu.recommend_allergies_three %>
+              </div>
+               <div class="layout2">
+                魅力
+                <%= @menu.recommend_charm_three %>
+                </div>
+             </div>
+          </div>
+         <div class="sub-other"> 
+           <div class="display-line">
+             <div class="layout">
+             メインメニュー１位
+             </div>
+             <% if  Menu.where(main_image_one: @main_image_one) != nil %>
+             <%=  image_tag @menu.main_image_one.url , class: "show-image" %>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="layout">
+            価格
+             <%= @menu.main_price_one %>円
+             </div>
+             <div class="layout">
+            カロリー
+             <%= @menu.main_calorie_one %>       
+            </div>
+             <div class="layout">
+            アレルギー
+             <%= @menu.main_allergies_one %>
+            </div>
+             <div class="layout2">
+             魅力
+            <%= @menu.main_charm_one %>
+             </div>
+          </div>
+           <div class="display-line">
+            <div class="layout">
+            メインメニュー２位
+            </div>
+            <% if  Menu.where(main_image_two: @main_image_two) != nil %>
+             <%=  image_tag @menu.main_image_two.url  ,class: "show-image"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="layout">
+            価格
+             <%= @menu.main_price_two %>円
+             </div>
+             <div class="layout">
+            カロリー
+             <%= @menu.main_calorie_two %>
+             </div>
+             <div class="layout">
+            アレルギー
+             <%= @menu.main_allergies_two %>
+             </div>
+             <div class="layout2">
+             魅力
+            <%= @menu.main_charm_two  %>
+            </div>
+          </div>
+           <div class="display-line">
+            <div class="layout">
+            メインメニュー３位
+            </div>
+            <% if  Menu.where(main_image_three: @main_image_three) != nil %>
+             <%=  image_tag @menu.main_image_three.url , class: "show-image"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="layout">
+            価格
+             <%= @menu.main_price_three %>
+             </div>
+             <div class="layout">
+            カロリー
+             <%= @menu.main_calorie_three  %>
+             </div>
+             <div class="layout">
+            アレルギー
+             <%= @menu.main_allergies_three  %>
+             </div>
+             <div class="layout2">
+             魅力
+            <%= @menu.main_charm_three %>
+            </div>
+          </div>
+       </div>
+       <div class="sub-other">
+          <div class="display-line">
+             <div class="sub-layout">
+             サブメニュー１位
+             </div>
+            <% if  Menu.where(sub_image_one: @sub_image_one) != nil %>
+             <%=  image_tag @menu.sub_image_one.url , class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="sub-layout">
+              価格
+              <%= @menu.sub_price_one %>
+             </div>
+             <div class="sub-layout">
+            カロリー
+             <%= @menu.sub_calorie_one %>
+             </div>
+             <div class="sub-layout">
+            アレルギー
+             <%= @menu.sub_allergies_one %>
+             </div>
+             <div class="sub-layout2">
+             魅力
+            <%= @menu.sub_charm_one %>  
+            </div>
+          </div>
+          <div class="display-line">
+            <div class="sub-layout">
+            サブメニュー２位
+            </div>
+           <% if  Menu.where(sub_image_two: @sub_image_two) != nil %>
+             <%=  image_tag @menu.sub_image_two.url ,class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="sub-layout">
+            価格
+             <%= @menu.sub_price_two %>
+             </div>
+             <div class="sub-layout">
+            カロリー
+             <%= @menu.sub_calorie_two %>
+             </div>
+             <div class="sub-layout">
+            アレルギー
+             <%= @menu.sub_allergies_two %>
+             </div>
+             <div class="sub-layout2">
+             魅力
+            <%= @menu.sub_charm_two %>
+            </div>
+          </div>
+          <div class="display-line">
+             <div class="sub-layout">
+             サブメニュー３位
+             </div>
+             <% if  Menu.where(sub_image_three: @sub_image_three) != nil %>
+             <%=  image_tag @menu.sub_image_three.url , class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="sub-layout">
+              価格
+             <%= @menu.sub_price_three %>
+             </div>
+             <div class="sub-layout">
+             カロリー
+             <%= @menu.sub_calorie_three %>
+             </div>
+             <div class="sub-layout">
+             アレルギー
+             <%= @menu.sub_allergies_three %>
+             </div>
+             <div class="sub-layout2">
+             魅力
+             <%= @menu.sub_charm_three %>
+             </div>
+          </div>
+          <div class="display-line">
+            <div class="sub-layout">
+            その他メニュー１位
+            </div>
+            <% if  Menu.where(other_image_one: @other_image_one) != nil %>
+             <%=  image_tag @menu.other_image_one.url  ,class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+            <div class="sub-layout">
+            価格
+             <%= @menu.other_price_one %>
+            </div>
+             <div class="sub-layout">
+            カロリー
+             <%= @menu.other_calorie_one %>
+            </div>
+             <div class="sub-layout">
+            アレルギー
+             <%= @menu.other_allergies_one %>
+            </div>
+             <div class="sub-layout2">
+             魅力
+            <%= @menu.other_charm_one %>
+             </div>
+          </div>
+          <div class="display-line">
+            <div class="sub-layout"> 
+            その他メニュー２位
+            </div>
+             <% if  Menu.where(other_image_two: @other_image_two) != nil %>
+             <%=  image_tag @menu.other_image_two.url , class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="sub-layout">
+             価格
+             <%= @menu.other_price_two %>
+            </div>
+             <div class="sub-layout">
+            カロリー
+             <%= @menu.other_calorie_two %>
+            </div>
+             <div class="sub-layout">
+            アレルギー
+             <%= @menu.other_allergies_two %>
+            </div>
+             <div class="sub-layout2">
+             魅力
+            <%= @menu.other_charm_two %>
+             </div>
+          </div>
+          <div class="display-line">
+            <div class="sub-layout">
+            その他メニュー３位
+            </div>
+            <% if  Menu.where(other_image_three: @other_image_three) != nil %>
+             <%=  image_tag @menu.other_image_three.url , class: "show-image2"%>
+             <%else%>
+             <form> No image </form>
+             <%end%>
+             <div class="sub-layout">
+            価格
+             <%= @menu.other_price_three %>
+            </div>
+             <div class="sub-layout">
+            カロリー
+             <%= @menu.other_calorie_three %>
+            </div>
+             <div class="sub-layout">
+            アレルギー
+             <%= @menu.other_allergies_three %>
+            </div>
+             <div class="sub-layout2">
+             魅力
+            <%= @menu.other_charm_three %>
+            </div>
+          </div>
+       </div>
+
+        <%=link_to 'もどる', root_path, class:"back-btn" %>
+
+      </div>
+       <div class="empty"></div>
+
+
+
+       
+
+
+
+
+
+ <footer class="footer">
+ <div> ManyMenuについて</div>
+  <div class='footer-contents'>
+    <div class='manymenu-details'> 
+        <div><%= link_to "お問い合わせ",  questions_path, class: "footer-link" %></div>
+        <div><%= link_to '会社概要（運営会社)', "#", class: "footer-link" %></div>
+        <div><%= link_to 'プライバシーポリシー', "#", class: "footer-link" %></div>
+        <div><%= link_to 'ManyMenu利用規約', "#", class: "footer-link" %></div>
+        <div><%= link_to 'Manymenuガイドライン', "#", class: "footer-link" %></div>
+        <div><%= link_to 'お知らせ', "#", class: "footer-link" %></div>
+    </div>
+  </div>
+  </footer>
