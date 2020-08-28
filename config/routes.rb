@@ -6,9 +6,9 @@ Rails.application.routes.draw do
   resources  :menus  do
     member do
       get 'search'
-    end
-    resources :menus_status, only: [:index, :show]
+    end  
   end
+  resources :customers, only: [:index, :new, :create,:destroy]
   resources :questions,  only: [:index, :create]
   resources :qr_codes,  only: [:index, :create]
   resources :publish_requests,  only: [:index, :create]

@@ -262,6 +262,9 @@ li{
 .manymenu-use{
   font-size: 30px;
 }
+.manymenu-use-center{
+  
+}
 .many-users{
   display: flex;
   justify-content: space-around;
