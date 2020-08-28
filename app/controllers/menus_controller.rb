@@ -66,7 +66,7 @@ class MenusController < ApplicationController
 
             :other_image_one,   :other_price_one,   :other_calorie_one,   :other_allergies_one,   :other_charm_one,
             :other_image_two,   :other_price_two,   :other_calorie_two,   :other_allergies_two,   :other_charm_two,
-            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three
+            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three,
             :shop_page
             
     ).merge(user_id: current_user.id)
@@ -87,7 +87,7 @@ class MenusController < ApplicationController
 
             :other_image_one,   :other_price_one,   :other_calorie_one,   :other_allergies_one,   :other_charm_one,
             :other_image_two,   :other_price_two,   :other_calorie_two,   :other_allergies_two,   :other_charm_two,
-            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three
+            :other_image_three, :other_price_three, :other_calorie_three, :other_allergies_three, :other_charm_three,
             :shop_page
             
     ).merge(user_id: current_user.id)
