@@ -26,4 +26,6 @@ class Menu < ApplicationRecord
     end
   end
 
+ 
+
 end
