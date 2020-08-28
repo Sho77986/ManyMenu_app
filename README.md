@@ -33,15 +33,15 @@ Things you may want to cover:
 
 | Column       | Type        | Options     |
 | ----------   | ----------- | ----------  |
-| password     | string      | null: false |
-| email        | string      | null: false |
 | name         | string      | null: false |
-| shop         | string      | null: false |
+| shop_name    | string      | null: false |
+| email        | string      | null: false |
 | call_number  | string      | null: false |
 | prefecture   | integer     | null: false |
 | city         | integer     | null: false |
 | address      | integer     | null: false |
 | postal_code  | string      | null: false |
+| password     | string      | null: false |
 | image        | string      | null: false |
 
 ### Association

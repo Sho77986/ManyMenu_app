@@ -44,15 +44,15 @@
         </div>
         <div class="manager-point">
           <%if Menu.find_by(user_id: current_user ) == nil %>
-           <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "item1" %> </li> 
+           <li><%= link_to  '掲載する品を増やす', new_menu_path , class: "item2" %> </li> 
           <%else%>
           <li><%= link_to  '掲載画面を確認する', menu_path(current_user.id) , class: "item2" %> </li>
-          <li><%= link_to  '掲載する品を編集する', edit_menu_path(current_user.id) , class: "item3" %> </li>
+          <li><%= link_to  '掲載する品を編集する', edit_menu_path(current_user.id) , class: "item2" %> </li>
           <%end%>
           <%if  Crean.find_by(user_id: current_user)  == nil  %>
-          <li><%= link_to  '衛生面、空き時間の表示を追加する', creans_path , class: "item4" %> </li>
+          <li><%= link_to  '衛生面、空き時間の表示を追加する', creans_path , class: "item2" %> </li>
           <%else%>
-          <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "item5" %> </li> 
+          <li><%= link_to  '衛生面、空き時間の表示を変更する', edit_crean_path(current_user.id), class: "item2" %> </li> 
           <%end%>
         </div>
        <div class="manager-point2">
@@ -71,12 +71,13 @@
 
       <h5 class="searchs">来店したお店のおすすめと<br>ランキングをみてみよう！</h5>
 
-
+            <%if @users.ids == nil%> 
             <div class="search"> 
                <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
                <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
                <%= form.submit "検索", class: "search-btn" %>
             </div>
+            <%end%>
        
        <h4 class="new-shop">最新の登録店舗はこちら</h4>
          <div class="shop-all">
@@ -227,14 +228,18 @@
          <div class="back-image-view-shape">
            <h5 class="searchs">Let`s use！</h5>
 
-           <div class="search"> 
+            <%if @users.ids == nil%> 
+            <div class="search"> 
                <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
                <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
                <%= form.submit "検索", class: "search-btn" %>
                <%end%>
-            </div>    
+            </div>
+            <%else%>
+            <%end%>  
         </div>
         <%end%>
+          <div class="empty2"></div> 
  </div>
 
  <footer class="footer">

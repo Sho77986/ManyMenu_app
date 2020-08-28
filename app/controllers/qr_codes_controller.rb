@@ -17,6 +17,6 @@ class QrCodesController < ApplicationController
   private
 
   def qr_codes_params
-    params.permit(:number_big, :number_small, :text).merge(user_id: current_user.id)
+    params.permit(:number_big, :number_small, :qr_text).merge(user_id: current_user.id)
   end
 end
