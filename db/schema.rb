@@ -93,6 +93,7 @@ ActiveRecord::Schema.define(version: 2020_08_28_042821) do
     t.string "other_calorie_three"
     t.string "other_allergies_three"
     t.string "other_charm_three"
+    t.string "shop_page"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

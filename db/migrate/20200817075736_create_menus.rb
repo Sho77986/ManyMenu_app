@@ -66,6 +66,7 @@ class CreateMenus < ActiveRecord::Migration[6.0]
       t.string       :other_allergies_three
       t.string       :other_charm_three
 
+      t.string       :shop_page
       t.timestamps
     end
   end
