@@ -94,6 +94,50 @@
       <% end %>
 
 
+
+
+
+
+
+          <!-- <div class="cean-infomation-image-comment">
+             <%if @customer != nil %>
+             <div class="crean-shop-image">
+                <% @customer.each do |customer| %>
+                <%= customer.image%>
+                <%end%>
+             </div>
+             <div class="crean-shop-comment">
+                <% @customer.each do |customer| %>
+                <%= customer.comment%>
+                <%end%>
+             </div>
+             <%else%>
+            <div class="crean-shop-no">口コミ、店内写真の投稿、お待ちしてます！</div>
+             <%end%>
+           </div>
+
+           <div> 口コミを投稿する！</div>
+             
+             <%=form_with  url: customers_path, method: :post,  local: true do |f| %>
+                 <div>  
+                    <%= f.file_field :image,class:"customer-image" %>
+                 </div>
+                 <div>
+                    <%= f.text_area :comment, class:"comment-text1", placeholder:"めちゃ美味しい！！！" ,maxlength:"300" %>
+                 </div>
+                 <div class="comment-btns">
+                    <%= f.submit "投稿する" ,class:"comment-btn" %>
+                 </div>
+            <%end%>   -->
+
+
+
+
+
+
+
+
+
       <% if user_signed_in? %>
       <%else%>
       <h4 class="manymenu-production">Manymenuとは何か</h4>
@@ -104,19 +148,20 @@
          </div>
 
       <h4 class="manymenu-use">お客様の使い方は２ステップ</h4>
-        <div class="many-users-image">
-          <div class="menu-use1-image"></div>
-          <div class="menu-use2-image"></div>
-        </div>
-        <div class="many-users">
+        <div class="manymenu-use-center">
+          <div class="many-users-image">
+            <div class="menu-use1-image"></div>
+            <div class="menu-use2-image"></div>
+          </div>
+          <div class="many-users">
             <div class="menu-use1">
-            ⒈来店店舗のお店でQRを読み込む！<br>　または検索！
+               ⒈来店店舗のお店でQRを読み込む！<br>　または検索！
             </div>
             <div class="menu-use2">
-         ⒉おすすめ商品がすぐわかる！<br>　さあ食べよう！
+              ⒉おすすめ商品がすぐわかる！<br>　さあ食べよう！
             </div>
+          </div>
         </div>
-
 
        <h4 class="manymenu-use">事業者様の使い方も２ステップ</h4>
        <div class="many-users-image">

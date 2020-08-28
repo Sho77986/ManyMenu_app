@@ -71,6 +71,7 @@
 }
 .sub-other{
   display: flex;
+  justify-content: space-around;
   overflow: hidden;
   overflow: scroll;
 }
