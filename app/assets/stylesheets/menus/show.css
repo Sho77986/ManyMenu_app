@@ -70,8 +70,16 @@
   border-color: gold;
 }
 .sub-other{
+  
   display: flex;
-  justify-content: space-around;
+  padding-left: 50px;
+  overflow: hidden;
+  overflow: scroll;
+}
+.sub-other2{
+  
+  display: flex;
+  padding-left: 50px;
   overflow: hidden;
   overflow: scroll;
 }
