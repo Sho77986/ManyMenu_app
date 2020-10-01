@@ -71,13 +71,13 @@
 
       <h5 class="searchs">来店したお店のおすすめと<br>ランキングをみてみよう！</h5>
 
-            <%if @users.ids == nil%> 
+            <%#if @users.ids == nil%> 
             <div class="search"> 
                <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
                <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
                <%= form.submit "検索", class: "search-btn" %>
             </div>
-            <%end%>
+            <%#end%>
        
        <h4 class="new-shop">最新の登録店舗はこちら</h4>
          <div class="shop-all">
@@ -228,15 +228,15 @@
          <div class="back-image-view-shape">
            <h5 class="searchs">Let`s use！</h5>
 
-            <%if @users.ids == nil%> 
+            <%#if @users.ids == nil%> 
             <div class="search"> 
                <%= form_with(url: search_menu_path(@users.ids), local: true, method: :get, class: "search-form")  do |form| %>
                <%= form.text_field :keyword, placeholder: "お店を検索する", class: "search-input" %>
                <%= form.submit "検索", class: "search-btn" %>
                <%end%>
             </div>
-            <%else%>
-            <%end%>  
+            <%#else%>
+            <%#end%>  
         </div>
         <%end%>
           <div class="empty2"></div> 

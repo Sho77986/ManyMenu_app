@@ -1,27 +1,34 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
 
-* Ruby version
+# アプリ名
+  ・ManyMenu
 
-* System dependencies
+# 概要(このアプリでできることを書いて下さい)
+  ・各店舗メニューを１２品掲載するアプリです。
+  ・検索機能を用い、アプリに登録されている店舗を検索、メニューを閲覧できます。
+  ・選択のパラドックスからくるメニュー選びによる満足度を、１２品のみ掲載する事で軽減し、満足度を上げます。
+  ・メニュー以外にも衛生面や空き時間を掲載、顧客の不安を払拭できます。
+  ・問い合わせ以外にQRコードを発行依頼するページを設置、QRコードの料金を非同期通信で計算し、依頼枚数に応じて発行する依頼をします。
+# 本番環境(デプロイ先　テストアカウント＆ID)
 
-* Configuration
+# 制作背景(意図)
+  ・コロナ禍で、飲食店は９割以上売上減少など大打撃を受けています、これを
+  以下の機能で補い、売上回復させるための既存客増加に繋がればと思い作りました。
+# DEMO(gifで動画や写真を貼って、ビューのイメージを掴んでもらいます)
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 工夫したポイント
+  ・事業者のみがログインを行います。判断は営業許可証を写真で送ってもらい行います。
+# 使用技術(開発環境)
+  ・Ruby on rails
+  ・Jquery
+  ・Github
+  ・HTML
+  ・CSS
+# 課題や今後実装したい機能
+  現在のアプリでは、体験型に程遠いです。
+# DB設計
 
 
 
